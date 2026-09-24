@@ -35,8 +35,12 @@ const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Cele
   animation: scroll 38s linear infinite;
 }
 
-.marquee:hover .track {
-  animation-play-state: paused;
+/* Pause on hover only with a real mouse; on touch screens a tap leaves a sticky
+   :hover that would freeze the marquee */
+@media (hover: hover) and (pointer: fine) {
+  .marquee:hover .track {
+    animation-play-state: paused;
+  }
 }
 
 .group {

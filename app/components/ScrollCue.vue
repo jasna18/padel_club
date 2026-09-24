@@ -86,7 +86,6 @@ onBeforeUnmount(() => {
   height: 52px;
   overflow: visible;
   filter: drop-shadow(0 6px 10px rgba(38, 48, 58, 0.18));
-  animation: bounce 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 .cue-ball,
@@ -133,15 +132,6 @@ onBeforeUnmount(() => {
   stroke: #fff;
   stroke-width: 5.5;
   opacity: 0.9;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-3px);
-  }
-  50% {
-    transform: translateY(4px);
-  }
 }
 
 @keyframes cue-in {
