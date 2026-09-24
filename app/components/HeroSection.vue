@@ -20,7 +20,7 @@
         <div class="hero-wash" aria-hidden="true" />
 
         <div class="hero-content">
-          <p class="eyebrow">Indoor Padel</p>
+          <p class="eyebrow hero-eyebrow">Indoor Padel</p>
           <h1>
             Play all year,<br />
             <em>in perfect</em> weather.
@@ -74,32 +74,66 @@
   animation: settle 1.6s var(--ease) both;
 }
 
-/* Pastel wash: sand on the text side, soft peach toward the image */
+/* Pastel wash: sand glow behind the centered text, court shows through below */
 .hero-wash {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(246, 240, 233, 0.7) 0%, rgba(246, 240, 233, 0) 22%),
-    linear-gradient(95deg, rgba(246, 240, 233, 0.96) 0%, rgba(246, 240, 233, 0.86) 30%, rgba(246, 240, 233, 0.2) 62%, rgba(242, 187, 166, 0.18) 100%),
-    linear-gradient(0deg, rgba(236, 214, 199, 0.35), rgba(236, 214, 199, 0) 45%);
+    radial-gradient(ellipse 70% 60% at 50% 38%, rgba(246, 240, 233, 0.9) 0%, rgba(246, 240, 233, 0.55) 55%, rgba(246, 240, 233, 0) 100%),
+    linear-gradient(180deg, rgba(246, 240, 233, 0.8) 0%, rgba(246, 240, 233, 0.35) 55%, rgba(242, 187, 166, 0.12) 100%);
 }
 
 .hero-content {
   position: absolute;
-  top: 50%;
-  left: clamp(24px, 6vw, 96px);
-  transform: translateY(-50%);
-  max-width: 560px;
-  animation: rise 1s var(--ease) 0.15s both;
+  top: calc(var(--header-h) + 6vh);
+  left: 50%;
+  width: min(880px, calc(100% - 48px));
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content > * {
+  animation: rise 0.9s var(--ease) both;
+}
+
+.hero-content > :nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.hero-content > :nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.hero-content > :nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Eyebrow framed by short rules */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
 }
 
 .hero-content h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(46px, 6.4vw, 96px);
-  line-height: 0.98;
-  letter-spacing: -0.01em;
-  margin: 20px 0 22px;
+  font-size: clamp(48px, 7.4vw, 112px);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  margin: 22px 0 24px;
   color: var(--ink);
 }
 
@@ -109,7 +143,7 @@
 }
 
 .hero-sub {
-  max-width: 420px;
+  max-width: 460px;
   font-size: 16.5px;
   color: var(--ink-soft);
 }
@@ -117,18 +151,12 @@
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
-  margin-top: 34px;
+  margin-top: 32px;
 }
 
 @keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(calc(-50% + 24px));
-  }
-}
-
-@keyframes rise-plain {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -145,16 +173,6 @@
   .hero-frame {
     border-radius: 0 0 140px 32px;
   }
-
-  .hero-wash {
-    background: linear-gradient(180deg, rgba(246, 240, 233, 0.94) 0%, rgba(246, 240, 233, 0.82) 50%, rgba(246, 240, 233, 0.25) 100%);
-  }
-
-  .hero-content {
-    top: calc(var(--header-h) + 40px);
-    transform: none;
-    animation-name: rise-plain;
-  }
 }
 
 @media (max-width: 600px) {
@@ -163,9 +181,8 @@
   }
 
   .hero-content {
-    left: 22px;
-    right: 22px;
-    top: calc(var(--header-h) + 24px);
+    top: calc(var(--header-h) + 28px);
+    width: calc(100% - 40px);
   }
 
   .hero-sub {
