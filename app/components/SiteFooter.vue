@@ -4,7 +4,7 @@ const year = new Date().getFullYear()
 
 const explore = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/#about' },
+  { label: 'Our Story', to: '/#about' },
   { label: 'Pricing', to: '/#pricing' },
   { label: 'Book a Court', to: '/book' }
 ]

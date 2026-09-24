@@ -4,7 +4,7 @@ const scrolled = ref(false)
 
 const links = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/#about' },
+  { label: 'Our Story', to: '/#about' },
   { label: 'Contact Us', to: '/#contact' }
 ]
 
