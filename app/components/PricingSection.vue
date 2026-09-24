@@ -103,7 +103,7 @@ const plans = [
 
 <style scoped>
 .pricing {
-  padding: 40px 0 120px;
+  padding: 40px 0 56px;
 }
 
 .pricing-head {
@@ -373,7 +373,7 @@ const plans = [
 
 @media (max-width: 600px) {
   .pricing {
-    padding: 24px 0 80px;
+    padding: 24px 0 40px;
   }
 
   .pricing-lead {
