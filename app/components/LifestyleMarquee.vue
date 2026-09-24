@@ -94,9 +94,11 @@ const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Cele
   }
 }
 
+/* Phones on battery saver often report reduced motion: keep a slow, gentle drift
+   instead of stopping (this also overrides the global reduced-motion rule) */
 @media (prefers-reduced-motion: reduce) {
   .track {
-    animation: none !important;
+    animation-duration: 90s !important;
   }
 }
 
