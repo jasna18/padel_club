@@ -20,7 +20,7 @@
             Climate-controlled courts, a community that loves a good rally, and coaching for every level.
           </p>
           <div class="hero-ctas">
-            <a href="#book" class="btn">Book a Court <span aria-hidden="true">→</span></a>
+            <a href="#book" class="btn">click for a free session <span aria-hidden="true">→</span></a>
             <a href="#about" class="btn btn-ghost">Explore the Club</a>
           </div>
         </div>

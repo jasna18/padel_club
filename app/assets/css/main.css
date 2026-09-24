@@ -95,15 +95,17 @@ button {
 }
 
 .btn-ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.6);
   color: var(--ink);
-  border-color: var(--ink);
+  border-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .btn-ghost:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
+  background: #fff;
+  border-color: transparent;
+  color: var(--coral);
 }
 
 :focus-visible {
