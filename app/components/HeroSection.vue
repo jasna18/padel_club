@@ -60,7 +60,7 @@
 .hero-frame {
   position: relative;
   height: 100%;
-  border-radius: 0 0 220px 40px;
+  border-radius: 0 0 220px 220px;
   overflow: hidden;
   background: var(--blush);
 }
@@ -174,7 +174,7 @@
 
 @media (max-width: 980px) {
   .hero-frame {
-    border-radius: 0 0 140px 32px;
+    border-radius: 0 0 140px 140px;
   }
 }
 
@@ -190,6 +190,20 @@
 
   .hero-sub {
     font-size: 17px;
+  }
+}
+
+/* Small phones: stack the two buttons at the same width */
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-ctas .btn {
+    justify-content: center;
   }
 }
 </style>

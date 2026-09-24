@@ -521,5 +521,15 @@ async function submit() {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .book-actions {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .book-actions .btn {
+    justify-content: center;
+  }
 }
 </style>
