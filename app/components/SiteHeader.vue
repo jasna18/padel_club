@@ -4,8 +4,7 @@ const scrolled = ref(false)
 
 const links = [
   { label: 'Home', to: '/' },
-  { label: 'Our Story', to: '/#about' },
-  { label: 'Contact Us', to: '/#contact' }
+  { label: 'Our Story', to: '/#about' }
 ]
 
 function onScroll() {
