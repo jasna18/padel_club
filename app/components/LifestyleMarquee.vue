@@ -47,13 +47,13 @@ const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Cele
 .item {
   display: flex;
   align-items: center;
-  gap: clamp(20px, 3vw, 44px);
-  padding-right: clamp(20px, 3vw, 44px);
+  gap: clamp(16px, 2vw, 32px);
+  padding-right: clamp(16px, 2vw, 32px);
 }
 
 .word {
   font-family: var(--serif);
-  font-size: clamp(44px, 6.4vw, 96px);
+  font-size: clamp(30px, 3.8vw, 56px);
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -64,12 +64,12 @@ const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Cele
 .word.outline {
   font-style: italic;
   color: transparent;
-  -webkit-text-stroke: 1.2px var(--coral);
+  -webkit-text-stroke: 1px var(--coral);
 }
 
 .ball {
-  width: clamp(18px, 2vw, 28px);
-  height: clamp(18px, 2vw, 28px);
+  width: clamp(14px, 1.4vw, 20px);
+  height: clamp(14px, 1.4vw, 20px);
   flex-shrink: 0;
 }
 
