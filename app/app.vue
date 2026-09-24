@@ -4,6 +4,8 @@
     <SiteHeader />
     <main>
       <HeroSection />
+      <StorySection />
+      <PricingSection />
     </main>
   </div>
 </template>

@@ -29,10 +29,12 @@
             Climate-controlled courts, a community that loves a good rally, and coaching for every level.
           </p>
           <div class="hero-ctas">
-            <a href="#book" class="btn">click for a free session <span aria-hidden="true">→</span></a>
+            <a href="#book" class="btn">try a beginner session <span aria-hidden="true">→</span></a>
             <a href="#about" class="btn btn-ghost">Explore the Club</a>
           </div>
         </div>
+
+        <ScrollCue />
       </div>
     </div>
   </section>
@@ -130,9 +132,9 @@
 .hero-content h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(48px, 7.4vw, 112px);
-  line-height: 0.95;
-  letter-spacing: -0.015em;
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   margin: 22px 0 24px;
   color: var(--ink);
 }
@@ -143,8 +145,9 @@
 }
 
 .hero-sub {
-  max-width: 460px;
-  font-size: 16.5px;
+  max-width: 34em;
+  font-size: 19px;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
 
@@ -186,7 +189,7 @@
   }
 
   .hero-sub {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 </style>

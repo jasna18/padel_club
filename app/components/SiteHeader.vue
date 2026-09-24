@@ -174,8 +174,8 @@ onBeforeUnmount(() => {
 }
 
 .book-btn {
-  padding: 11px 22px;
-  font-size: 13px;
+  padding: 0 22px;
+  font-size: 15px;
 }
 
 /* Two-line menu button */
@@ -306,15 +306,15 @@ onBeforeUnmount(() => {
 }
 
 .drawer-num {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--coral);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 
 .drawer-label {
   font-family: var(--serif);
-  font-size: clamp(34px, 5vw, 44px);
-  line-height: 1;
+  font-size: clamp(32px, 3vw, 40px);
+  line-height: 1.1;
   transition: color 0.25s ease;
 }
 
