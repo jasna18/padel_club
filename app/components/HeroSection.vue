@@ -4,14 +4,23 @@
       <div class="hero-frame">
         <img
           class="hero-img"
-          src="/images/hero-court.jpg"
+          src="/images/hero-court-1600.webp"
+          srcset="
+            /images/hero-court-800.webp   800w,
+            /images/hero-court-1200.webp 1200w,
+            /images/hero-court-1600.webp 1600w,
+            /images/hero-court-2000.webp 2000w
+          "
+          sizes="100vw"
+          width="2000"
+          height="1333"
           alt="Indoor padel court with a coral surface under a white canopy, city towers beyond the glass"
           fetchpriority="high"
         />
         <div class="hero-wash" aria-hidden="true" />
 
         <div class="hero-content">
-          <p class="eyebrow">Indoor Padel · Dubai</p>
+          <p class="eyebrow">Indoor Padel</p>
           <h1>
             Play all year,<br />
             <em>in perfect</em> weather.
