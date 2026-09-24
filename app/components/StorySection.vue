@@ -274,7 +274,9 @@ const spaces = [
     margin-right: 4%;
   }
 
+  /* On mobile the story text comes first, then the photo */
   .story-copy {
+    order: -1;
     max-width: none;
   }
 
