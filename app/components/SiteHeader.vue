@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
       </NuxtLink>
 
       <div class="header-actions">
-        <a href="#book" class="btn book-btn">Book a Court</a>
+        <NuxtLink to="/book" class="btn book-btn">Book a Court</NuxtLink>
         <button
           class="burger"
           type="button"
@@ -93,7 +93,6 @@ onBeforeUnmount(() => {
             :style="{ '--i': i }"
             @click="open = false"
           >
-            <span class="drawer-num">0{{ i + 1 }}</span>
             <span class="drawer-label">{{ l.label }}</span>
             <span class="drawer-arrow" aria-hidden="true">→</span>
           </NuxtLink>
@@ -101,9 +100,9 @@ onBeforeUnmount(() => {
 
         <div class="drawer-foot">
           <p class="drawer-foot-title">Visit us</p>
-          <p>Al Quoz, Dubai — United Arab Emirates</p>
+          <p>DIP, Dubai — United Arab Emirates</p>
           <p>Open daily · 7:00 – 24:00</p>
-          <a href="#book" class="btn drawer-cta" @click="open = false">Book a Court <span aria-hidden="true">→</span></a>
+          <NuxtLink to="/book" class="btn drawer-cta" @click="open = false">Book a Court <span aria-hidden="true">→</span></NuxtLink>
         </div>
       </aside>
     </Transition>
@@ -297,7 +296,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: baseline;
   gap: 18px;
-  padding: 18px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--line);
   opacity: 0;
   transform: translateX(24px);
@@ -305,16 +304,10 @@ onBeforeUnmount(() => {
   animation-delay: calc(0.12s + var(--i) * 0.07s);
 }
 
-.drawer-num {
-  font-size: 13px;
-  color: var(--coral);
-  letter-spacing: 0.15em;
-}
-
 .drawer-label {
   font-family: var(--serif);
-  font-size: clamp(32px, 3vw, 40px);
-  line-height: 1.1;
+  font-size: clamp(24px, 2vw, 28px);
+  line-height: 1.2;
   transition: color 0.25s ease;
 }
 

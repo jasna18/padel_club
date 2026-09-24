@@ -29,7 +29,7 @@
             Climate-controlled courts, a community that loves a good rally, and coaching for every level.
           </p>
           <div class="hero-ctas">
-            <a href="#book" class="btn">try a beginner session <span aria-hidden="true">→</span></a>
+            <NuxtLink to="/book?type=coaching" class="btn">try a beginner session <span aria-hidden="true">→</span></NuxtLink>
             <a href="#about" class="btn btn-ghost">Explore the Club</a>
           </div>
         </div>

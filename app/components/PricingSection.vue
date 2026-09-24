@@ -13,7 +13,7 @@ const plans = [
       { label: 'Racket rental', detail: 'Per racket', price: '25' }
     ],
     cta: 'Book a Court',
-    href: '#book'
+    href: '/book'
   },
   {
     name: 'Membership',
@@ -27,7 +27,7 @@ const plans = [
       'Access to the wellness & recovery lounge'
     ],
     cta: 'Become a Member',
-    href: '#membership'
+    href: '/book?type=membership'
   },
   {
     name: 'Coaching',
@@ -38,7 +38,7 @@ const plans = [
       { label: 'Group clinic', detail: 'Per person, up to 4', price: '120' }
     ],
     cta: 'Book a Lesson',
-    href: '#coaching'
+    href: '/book?type=coaching'
   }
 ]
 </script>
@@ -90,9 +90,9 @@ const plans = [
             <li v-for="perk in p.perks" :key="perk">{{ perk }}</li>
           </ul>
 
-          <a :href="p.href" class="btn plan-cta" :class="{ 'btn-ghost': !p.featured }">
+          <NuxtLink :to="p.href" class="btn plan-cta" :class="{ 'btn-ghost': !p.featured }">
             {{ p.cta }} <span aria-hidden="true">→</span>
-          </a>
+          </NuxtLink>
         </li>
       </ul>
 

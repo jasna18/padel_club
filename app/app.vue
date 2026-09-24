@@ -3,9 +3,8 @@
     <NuxtRouteAnnouncer />
     <SiteHeader />
     <main>
-      <HeroSection />
-      <StorySection />
-      <PricingSection />
+      <NuxtPage />
     </main>
+    <SiteFooter />
   </div>
 </template>
