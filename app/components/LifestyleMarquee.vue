@@ -1,11 +1,32 @@
 <script setup lang="ts">
 const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Celebrate']
+
+// Same scroll speed on every screen: derive the loop duration from the track width
+const SPEED = 40 // px per second
+const track = ref<HTMLElement | null>(null)
+const duration = ref('38s')
+let observer: ResizeObserver | null = null
+
+function measure() {
+  const half = (track.value?.scrollWidth ?? 0) / 2
+  if (half > 0) duration.value = `${(half / SPEED).toFixed(1)}s`
+}
+
+onMounted(() => {
+  measure()
+  observer = new ResizeObserver(measure)
+  if (track.value) observer.observe(track.value)
+  // Web fonts can change the width after first paint
+  document.fonts?.ready.then(measure)
+})
+
+onBeforeUnmount(() => observer?.disconnect())
 </script>
 
 <template>
   <section class="marquee" aria-label="Play, train, unwind, recover, connect, compete, celebrate">
     <!-- The list is rendered twice so the loop is seamless; the copy is hidden from screen readers -->
-    <div class="track" aria-hidden="true">
+    <div ref="track" class="track" aria-hidden="true" :style="{ '--dur': duration }">
       <ul v-for="copy in 2" :key="copy" class="group">
         <li v-for="(w, i) in words" :key="w" class="item">
           <span class="word" :class="{ outline: i % 2 === 1 }">{{ w }}</span>
@@ -32,7 +53,7 @@ const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Cele
 .track {
   display: flex;
   width: max-content;
-  animation: scroll 38s linear infinite;
+  animation: scroll var(--dur, 38s) linear infinite;
 }
 
 /* Pause on hover only with a real mouse; on touch screens a tap leaves a sticky
@@ -94,21 +115,17 @@ const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Cele
   }
 }
 
-/* Phones on battery saver often report reduced motion: keep a slow, gentle drift
-   instead of stopping (this also overrides the global reduced-motion rule) */
+/* Phones on battery saver often report reduced motion: keep the normal speed
+   instead of stopping (this overrides the global reduced-motion rule) */
 @media (prefers-reduced-motion: reduce) {
   .track {
-    animation-duration: 90s !important;
+    animation-duration: var(--dur, 38s) !important;
   }
 }
 
 @media (max-width: 600px) {
   .marquee {
     padding: 8px 0 48px;
-  }
-
-  .track {
-    animation-duration: 28s;
   }
 }
 </style>
