@@ -2,7 +2,7 @@
 const words = ['Play', 'Train', 'Unwind', 'Recover', 'Connect', 'Compete', 'Celebrate']
 
 // Same scroll speed on every screen: derive the loop duration from the track width
-const SPEED = 40 // px per second
+const SPEED = 60 // px per second
 const track = ref<HTMLElement | null>(null)
 const duration = ref('38s')
 let observer: ResizeObserver | null = null
