@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { club } = useAppConfig()
-const href = `https://wa.me/${club.whatsapp}?text=${encodeURIComponent('Hi Euro Padel, I would like to know more about booking a court.')}`
+const { whatsappUrl } = useClub()
+const href = whatsappUrl('Hi Euro Padel, I would like to know more about booking a court.')
 </script>
 
 <template>

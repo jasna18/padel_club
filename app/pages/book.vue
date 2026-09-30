@@ -4,7 +4,7 @@ useSeoMeta({
   description: 'Request a court, a coaching session or a membership at Euro Padel, the indoor padel club in Dubai.'
 })
 
-const { club } = useAppConfig()
+const { club, whatsappUrl, phoneUrl, emailUrl } = useClub()
 const route = useRoute()
 
 const types = [
@@ -61,7 +61,7 @@ async function submit() {
   // No form service configured: hand the request to the visitor's email app
   if (!club.bookingEndpoint) {
     const subject = encodeURIComponent(`${type} request — ${form.name}`)
-    window.location.href = `mailto:${club.email}?subject=${subject}&body=${encodeURIComponent(body)}`
+    window.location.href = `${emailUrl}?subject=${subject}&body=${encodeURIComponent(body)}`
     status.value = 'mailed'
     return
   }
@@ -94,15 +94,15 @@ async function submit() {
         />
         <div class="book-visual-card">
           <p class="eyebrow">Prefer to talk?</p>
-          <a :href="`https://wa.me/${club.whatsapp}`" target="_blank" rel="noopener" class="visual-link">
+          <a :href="whatsappUrl()" target="_blank" rel="noopener" class="visual-link">
             WhatsApp us <span aria-hidden="true">→</span>
           </a>
-          <a :href="`tel:${club.phoneHref}`" class="visual-link">{{ club.phone }}</a>
+          <a :href="phoneUrl" class="visual-link">{{ club.phone }}</a>
         </div>
       </aside>
 
       <div class="book-main">
-        <p class="eyebrow book-eyebrow">Reservations</p>
+        <p class="eyebrow">Reservations</p>
         <h1>Book your <em>court.</em></h1>
         <p class="book-lead">Tell us when you'd like to play and we'll confirm your booking by phone or email.</p>
 
@@ -111,7 +111,7 @@ async function submit() {
           <p v-if="status === 'sent'">Your request is with us. We'll be in touch shortly to confirm.</p>
           <p v-else>
             Your email app should now be open with your request filled in — just press send. If nothing opened, email us at
-            <a :href="`mailto:${club.email}`">{{ club.email }}</a>.
+            <a :href="emailUrl">{{ club.email }}</a>.
           </p>
           <NuxtLink to="/" class="book-back">Back to home <span aria-hidden="true">→</span></NuxtLink>
         </div>
@@ -255,12 +255,6 @@ async function submit() {
 .book-main {
   padding-top: 24px;
   max-width: 620px;
-}
-
-.book-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
 }
 
 .book-main h1 {

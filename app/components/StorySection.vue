@@ -26,8 +26,8 @@ const spaces = [
       </figure>
 
       <div class="story-copy">
-        <p class="eyebrow story-eyebrow">Our Story</p>
-        <h2>
+        <p class="eyebrow">Our Story</p>
+        <h2 class="section-title">
           More than a court,<br />
           <em>a club.</em>
         </h2>
@@ -98,25 +98,8 @@ const spaces = [
   max-width: 480px;
 }
 
-.story-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
 .story-copy h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(28px, 3.4vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
   margin: 20px 0 24px;
-  color: var(--ink);
-}
-
-.story-copy h2 em {
-  font-style: italic;
-  color: var(--coral);
 }
 
 .story-text {
@@ -236,18 +219,6 @@ const spaces = [
 
   .story-text {
     font-size: 16px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .spaces {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-
-  .spaces-intro {
-    max-width: 600px;
-    margin: 0 auto;
   }
 }
 

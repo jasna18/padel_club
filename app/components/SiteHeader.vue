@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { club } = useClub()
 const open = ref(false)
 const scrolled = ref(false)
 
@@ -99,8 +100,8 @@ onBeforeUnmount(() => {
 
         <div class="drawer-foot">
           <p class="drawer-foot-title">Visit us</p>
-          <p>DIP, Dubai — United Arab Emirates</p>
-          <p>Open daily · 7:00 – 24:00</p>
+          <p>{{ club.location }} — {{ club.country }}</p>
+          <p>Open daily · {{ club.hours }}</p>
           <NuxtLink to="/book" class="btn drawer-cta" @click="open = false">Book a Court <span aria-hidden="true">→</span></NuxtLink>
         </div>
       </aside>

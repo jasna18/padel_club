@@ -47,8 +47,8 @@ const plans = [
   <section id="pricing" ref="root" class="pricing" :class="{ armed }">
     <div class="container">
       <div class="pricing-head" data-reveal>
-        <p class="eyebrow pricing-eyebrow">Pricing</p>
-        <h2>Simple, <em>transparent</em> rates.</h2>
+        <p class="eyebrow">Pricing</p>
+        <h2 class="section-title">Simple, <em>transparent</em> rates.</h2>
         <p class="pricing-lead">Play when it suits you, learn from the best, or make Euro Padel your second home.</p>
       </div>
 
@@ -112,25 +112,8 @@ const plans = [
   text-align: center;
 }
 
-.pricing-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-}
-
 .pricing-head h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(28px, 3.4vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
   margin: 18px 0 16px;
-  color: var(--ink);
-}
-
-.pricing-head h2 em {
-  font-style: italic;
-  color: var(--coral);
 }
 
 .pricing-lead {

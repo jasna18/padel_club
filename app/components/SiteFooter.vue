@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { club } = useAppConfig()
+const { club, whatsappUrl, phoneUrl, emailUrl } = useClub()
 const year = new Date().getFullYear()
 
 const explore = [
@@ -33,16 +33,16 @@ const explore = [
 
         <div class="footer-col">
           <p class="footer-title">Visit</p>
-          <p>DIP, Dubai</p>
-          <p>United Arab Emirates</p>
+          <p>{{ club.location }}</p>
+          <p>{{ club.country }}</p>
           <p class="footer-gap">Open daily</p>
-          <p>7:00 – 24:00</p>
+          <p>{{ club.hours }}</p>
         </div>
 
         <div class="footer-col">
           <p class="footer-title">Contact</p>
-          <a :href="`tel:${club.phoneHref}`" class="footer-link">{{ club.phone }}</a>
-          <a :href="`mailto:${club.email}`" class="footer-link">{{ club.email }}</a>
+          <a :href="phoneUrl" class="footer-link">{{ club.phone }}</a>
+          <a :href="emailUrl" class="footer-link">{{ club.email }}</a>
           <div class="footer-social">
             <a href="#" aria-label="Instagram">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -51,7 +51,7 @@ const explore = [
                 <circle cx="17.2" cy="6.8" r=".9" class="dot" />
               </svg>
             </a>
-            <a :href="`https://wa.me/${club.whatsapp}`" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <a :href="whatsappUrl()" target="_blank" rel="noopener" aria-label="WhatsApp">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 20l1.2-3.6A8 8 0 1 1 8 19.1L4 20Z" />
                 <path d="M9.2 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.1.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3 0 .6-.5.8-1.3.6-3.5-.1-5-1.6s-2.3-3.7-1.9-5.1Z" class="dot" />
@@ -238,6 +238,7 @@ const explore = [
   justify-content: space-between;
   gap: 16px;
   padding-top: 24px;
+  padding-right: 76px; /* keeps Privacy / Terms clear of the floating WhatsApp button */
   border-top: 1px solid var(--on-olive-line);
   font-size: 13px;
   color: var(--on-olive-dim);
@@ -252,10 +253,11 @@ const explore = [
   color: var(--olive);
 }
 
+/* Tablets and phones: logo block on top, Explore / Visit / Contact in one row */
 @media (max-width: 980px) {
   .footer-top {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px 32px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px 24px;
   }
 
   .footer-brand {
@@ -269,8 +271,42 @@ const explore = [
     padding: 64px 0 28px;
   }
 
+  /* Tighter columns so all three fit side by side on small phones */
   .footer-top {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 36px 12px;
+  }
+
+  .footer-col {
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .footer-title {
+    margin-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+
+  /* Long email or phone never pushes the page sideways */
+  .footer-link {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-social {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-social svg {
+    width: 17px;
+    height: 17px;
   }
 
   .footer-wordmark {

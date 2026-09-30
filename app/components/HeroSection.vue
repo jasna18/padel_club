@@ -20,7 +20,7 @@
         <div class="hero-wash" aria-hidden="true" />
 
         <div class="hero-content">
-          <p class="eyebrow hero-eyebrow">Indoor Padel</p>
+          <p class="eyebrow">Indoor Padel</p>
           <h1>
             Play all year,<br />
             <em>in perfect</em> weather.
@@ -114,12 +114,6 @@
 }
 
 /* Eyebrow framed by short rules */
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
 .hero-content h1 {
   font-family: var(--serif);
   font-weight: 400;

@@ -14,15 +14,15 @@ const events = [
   <section id="events" ref="root" class="events" :class="{ armed }">
     <div class="container events-grid">
       <div class="events-copy" data-reveal>
-        <p class="eyebrow events-eyebrow">Events</p>
-        <h2>Where the club <em>comes together.</em></h2>
+        <p class="eyebrow">Events</p>
+        <h2 class="section-title">Where the club <em>comes together.</em></h2>
         <p class="events-text">
           From Thursday Americanos to finals night under the lights, our calendar is full of reasons to stay a little
           longer. Host your team, celebrate a milestone, or simply come and meet your next doubles partner.
         </p>
 
         <ul class="events-list">
-          <li v-for="(e, i) in events" :key="e.title" class="event" :style="{ '--i': i }">
+          <li v-for="e in events" :key="e.title" class="event">
             <span class="event-title">{{ e.title }}</span>
             <span class="event-detail">{{ e.detail }}</span>
           </li>
@@ -65,25 +65,8 @@ const events = [
   max-width: 520px;
 }
 
-.events-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
 .events-copy h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(28px, 3.4vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
   margin: 20px 0 22px;
-  color: var(--ink);
-}
-
-.events-copy h2 em {
-  font-style: italic;
-  color: var(--coral);
 }
 
 .events-text {
