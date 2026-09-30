@@ -53,14 +53,7 @@ const spaces = [
         </p>
       </div>
 
-      <ul class="spaces-list">
-        <li v-for="(sp, i) in spaces" :key="sp.title" class="space" :style="{ '--i': i }">
-          <div class="space-img">
-            <img :src="`/images/${sp.img}`" :alt="sp.alt" loading="lazy" width="1100" height="614" />
-          </div>
-          <p class="space-title">{{ sp.title }}</p>
-        </li>
-      </ul>
+      <SpacesCarousel :spaces="spaces" class="spaces-carousel" />
     </div>
   </section>
 </template>
@@ -169,24 +162,27 @@ const spaces = [
 .story.armed .story-grid:not(.in) .story-media,
 .story.armed .story-grid:not(.in) .story-copy > *,
 .story.armed .spaces:not(.in) .spaces-intro,
-.story.armed .spaces:not(.in) .space {
+.story.armed .spaces:not(.in) .spaces-carousel {
   opacity: 0;
   transform: translateY(28px);
 }
 
 /* Four spaces */
+/* Intro on top, full-width ring carousel below */
 .spaces {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  align-items: center;
-  gap: clamp(32px, 4vw, 64px);
+  grid-template-columns: 1fr;
+  gap: 8px; /* the carousel stage already has room at its top for the back photo */
   margin-top: 110px;
   padding-top: 64px;
   border-top: 1px solid var(--line);
 }
 
+/* Centred over the full-width carousel */
 .spaces-intro {
-  max-width: 500px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
   transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
 }
 
@@ -210,41 +206,8 @@ const spaces = [
   color: var(--ink-soft);
 }
 
-.spaces-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px 20px;
-}
-
-.space {
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-  transition-delay: calc(0.1s + var(--i) * 0.08s);
-}
-
-.space-img {
-  overflow: hidden;
-  border-radius: 18px;
-  aspect-ratio: 4 / 3;
-  background: var(--blush);
-}
-
-.space-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s var(--ease);
-}
-
-.space:hover .space-img img {
-  transform: scale(1.06);
-}
-
-.space-title {
-  margin-top: 14px;
-  font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.2;
-  color: var(--ink);
+.spaces-carousel {
+  transition: opacity 0.9s var(--ease) 0.15s, transform 0.9s var(--ease) 0.15s;
 }
 
 .story-copy > :nth-child(2) { transition-delay: 0.08s; }
@@ -284,6 +247,7 @@ const spaces = [
 
   .spaces-intro {
     max-width: 600px;
+    margin: 0 auto;
   }
 }
 
@@ -293,16 +257,8 @@ const spaces = [
     padding-top: 48px;
   }
 
-  .spaces-list {
-    gap: 24px 14px;
-  }
-
   .spaces-intro p:last-child {
     font-size: 17px;
-  }
-
-  .space-title {
-    font-size: 18px;
   }
 }
 </style>
