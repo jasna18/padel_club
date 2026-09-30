@@ -140,7 +140,7 @@ const events = [
   inset: -6% 8% 12% -5%;
   z-index: -1;
   border-radius: 28px;
-  background: rgba(99, 107, 47, 0.12);
+  background: rgba(75, 98, 75, 0.12);
 }
 
 .events-badge {
@@ -149,7 +149,7 @@ const events = [
   bottom: 24px;
   padding: 10px 18px;
   border-radius: 999px;
-  background: rgba(246, 240, 233, 0.9);
+  background: rgba(245, 245, 241, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   font-size: 12px;

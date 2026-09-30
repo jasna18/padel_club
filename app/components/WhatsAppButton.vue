@@ -40,7 +40,7 @@ const href = `https://wa.me/${club.whatsapp}?text=${encodeURIComponent('Hi Euro 
   height: 58px;
   border-radius: 50%;
   background: var(--olive);
-  box-shadow: 0 14px 34px -8px rgba(38, 48, 58, 0.4), 0 0 0 6px rgba(99, 107, 47, 0.14);
+  box-shadow: 0 14px 34px -8px rgba(38, 48, 58, 0.4), 0 0 0 6px rgba(75, 98, 75, 0.14);
   transition: transform 0.35s var(--ease), background 0.3s ease;
 }
 
@@ -51,20 +51,20 @@ const href = `https://wa.me/${club.whatsapp}?text=${encodeURIComponent('Hi Euro 
 
 .wa-bubble {
   fill: none;
-  stroke: #f3eee4;
+  stroke: #f5f5f1;
   stroke-width: 1.6;
   stroke-linejoin: round;
 }
 
 .wa-phone {
-  fill: #f3eee4;
+  fill: #f5f5f1;
 }
 
 /* Label slides out on hover (desktop) */
 .wa-label {
   padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(252, 249, 245, 0.95);
+  background: rgba(250, 250, 247, 0.95);
   box-shadow: 0 10px 26px -10px rgba(38, 48, 58, 0.35);
   font-size: 14px;
   font-weight: 600;
@@ -84,7 +84,7 @@ const href = `https://wa.me/${club.whatsapp}?text=${encodeURIComponent('Hi Euro 
 
 .wa:hover .wa-icon {
   transform: scale(1.06);
-  background: #545b27;
+  background: #3c4f3c;
 }
 
 @keyframes wa-in {

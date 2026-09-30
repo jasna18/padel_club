@@ -1,15 +1,15 @@
 :root {
   /* Sand & Peach Coral */
-  --sand: #f6f0e9;
-  --sand-deep: #efe4d8;
-  --blush: #ecd6c7;
-  --peach: #f2bba6;
-  --coral: #e8826a;
-  --coral-deep: #d96d55;
+  --sand: #f5f5f1; /* Pantone P 179-1 U */
+  --sand-deep: #ebebe4;
+  --blush: #f3d5cf;
+  --peach: #efafa6;
+  --coral: #e74536; /* Pantone 2347 U */
+  --coral-deep: #c8372a;
   --ink: #26303a;
   --ink-soft: #5d6570;
-  --line: #e6d9cc;
-  --olive: #636b2f;
+  --line: #e2e2da;
+  --olive: #4b624b; /* Pantone 2411 U */
 
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'Manrope', 'Helvetica Neue', Arial, sans-serif;

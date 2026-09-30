@@ -232,7 +232,7 @@ async function submit() {
   gap: 8px 24px;
   padding: 18px 22px;
   border-radius: 20px;
-  background: rgba(246, 240, 233, 0.9);
+  background: rgba(245, 245, 241, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -375,7 +375,7 @@ async function submit() {
   min-height: 48px;
   padding: 10px 0;
   border: 0;
-  border-bottom: 1px solid #d8c9ba;
+  border-bottom: 1px solid #cfcfc6;
   border-radius: 0;
   background: transparent;
   font: inherit;
@@ -401,7 +401,7 @@ async function submit() {
 }
 
 .field input::placeholder {
-  color: #b9ab9d;
+  color: #a9a9a0;
 }
 
 .field input:focus,

@@ -81,8 +81,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 38%, rgba(246, 240, 233, 0.9) 0%, rgba(246, 240, 233, 0.55) 55%, rgba(246, 240, 233, 0) 100%),
-    linear-gradient(180deg, rgba(246, 240, 233, 0.8) 0%, rgba(246, 240, 233, 0.35) 55%, rgba(242, 187, 166, 0.12) 100%);
+    radial-gradient(ellipse 70% 60% at 50% 38%, rgba(245, 245, 241, 0.9) 0%, rgba(245, 245, 241, 0.55) 55%, rgba(245, 245, 241, 0) 100%),
+    linear-gradient(180deg, rgba(245, 245, 241, 0.8) 0%, rgba(245, 245, 241, 0.35) 55%, rgba(239, 175, 166, 0.12) 100%);
 }
 
 .hero-content {

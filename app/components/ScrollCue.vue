@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
 }
 
 .cue-ball circle {
-  fill: #e8836a;
+  fill: #e74536;
 }
 
 .cue-ball path {
@@ -118,7 +118,7 @@ onBeforeUnmount(() => {
 
 .cue-arrow path {
   fill: none;
-  stroke: #e8836a;
+  stroke: #e74536;
   stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;

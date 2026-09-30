@@ -169,7 +169,7 @@ const plans = [
   flex-direction: column;
   padding: 36px 32px 32px;
   border-radius: 24px;
-  background: rgba(252, 249, 245, 0.94);
+  background: rgba(250, 250, 247, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -181,7 +181,7 @@ const plans = [
 .plan.featured {
   background: var(--sand);
   border-color: var(--peach);
-  box-shadow: 0 34px 70px -24px rgba(232, 130, 106, 0.45);
+  box-shadow: 0 34px 70px -24px rgba(231, 69, 54, 0.45);
 }
 
 .plan-badge {

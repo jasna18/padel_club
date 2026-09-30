@@ -83,9 +83,9 @@ const explore = [
 .footer {
   --on-olive: var(--ink);
   --on-olive-dim: var(--ink-soft);
-  --on-olive-line: rgba(99, 107, 47, 0.2);
-  background: linear-gradient(180deg, rgba(99, 107, 47, 0.06) 0%, rgba(99, 107, 47, 0.16) 100%), var(--sand);
-  border-top: 1px solid rgba(99, 107, 47, 0.12);
+  --on-olive-line: rgba(75, 98, 75, 0.2);
+  background: linear-gradient(180deg, rgba(75, 98, 75, 0.06) 0%, rgba(75, 98, 75, 0.16) 100%), var(--sand);
+  border-top: 1px solid rgba(75, 98, 75, 0.12);
   color: var(--on-olive);
   border-radius: 40px 40px 0 0;
   padding: 88px 0 32px;
@@ -129,14 +129,14 @@ const explore = [
   padding: 0 26px;
   border-radius: 999px;
   background: var(--olive);
-  color: #f6f0e9;
+  color: #f5f5f1;
   font-size: 15px;
   font-weight: 600;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .footer-cta:hover {
-  background: #545b27;
+  background: #3c4f3c;
 }
 
 .footer-col {
@@ -209,11 +209,11 @@ const explore = [
 }
 
 .footer-social a:hover svg {
-  stroke: #f6f0e9;
+  stroke: #f5f5f1;
 }
 
 .footer-social a:hover svg .dot {
-  fill: #f6f0e9;
+  fill: #f5f5f1;
 }
 
 /* Oversized wordmark across the bottom */
@@ -225,12 +225,12 @@ const explore = [
   letter-spacing: -0.02em;
   white-space: nowrap;
   text-align: center;
-  color: rgba(99, 107, 47, 0.12);
+  color: rgba(75, 98, 75, 0.12);
 }
 
 .footer-wordmark em {
   font-style: italic;
-  color: rgba(232, 130, 106, 0.22);
+  color: rgba(231, 69, 54, 0.22);
 }
 
 .footer-bottom {
