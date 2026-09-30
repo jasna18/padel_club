@@ -120,15 +120,6 @@
   gap: 14px;
 }
 
-.hero-eyebrow::before,
-.hero-eyebrow::after {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.6;
-}
-
 .hero-content h1 {
   font-family: var(--serif);
   font-weight: 400;

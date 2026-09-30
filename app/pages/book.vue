@@ -263,14 +263,6 @@ async function submit() {
   gap: 14px;
 }
 
-.book-eyebrow::before {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.6;
-}
-
 .book-main h1 {
   font-family: var(--serif);
   font-weight: 400;

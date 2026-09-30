@@ -111,14 +111,6 @@ const spaces = [
   gap: 14px;
 }
 
-.story-eyebrow::before {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.6;
-}
-
 .story-copy h2 {
   font-family: var(--serif);
   font-weight: 400;
@@ -254,7 +246,6 @@ const spaces = [
   line-height: 1.2;
   color: var(--ink);
 }
-
 
 .story-copy > :nth-child(2) { transition-delay: 0.08s; }
 .story-copy > :nth-child(3) { transition-delay: 0.16s; }

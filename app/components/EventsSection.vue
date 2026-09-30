@@ -71,14 +71,6 @@ const events = [
   gap: 14px;
 }
 
-.events-eyebrow::before {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.6;
-}
-
 .events-copy h2 {
   font-family: var(--serif);
   font-weight: 400;

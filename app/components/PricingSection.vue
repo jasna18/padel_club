@@ -118,15 +118,6 @@ const plans = [
   gap: 14px;
 }
 
-.pricing-eyebrow::before,
-.pricing-eyebrow::after {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.6;
-}
-
 .pricing-head h2 {
   font-family: var(--serif);
   font-weight: 400;
